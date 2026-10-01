@@ -12,7 +12,7 @@
 ![Tests](https://img.shields.io/badge/tests-12%20unit%20%2B%2019%20browser%20checks-brightgreen)
 ![Use](https://img.shields.io/badge/use-education%20%26%20decision%20support%20only-orange)
 
-**[▶ Live demo](#)** · **[🎬 Demo video](#)** · **[📄 Documentation (PDF)](docs/Project_Documentation.pdf)** · **[🧾 Video script](docs/Demo_Video_Script.md)**
+**[▶ Live demo](#)** · **[🎬 Demo video](#)** · **[📄 Documentation (PDF)](docs/Project Documentation_Multimodal Hackathon.pdf)** 
 
 <!-- TODO: replace the three "#" links above with the Hugging Face / Render URL, the YouTube URL, and keep the two docs links. -->
 
