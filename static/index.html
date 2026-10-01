@@ -1,0 +1,79 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Cardio3D – coronary risk viewer</title>
+<link rel="stylesheet" href="/style.css">
+<script type="importmap">
+{"imports":{"three":"/vendor/three/three.module.js","three/addons/":"/vendor/three/examples/jsm/"}}
+</script>
+</head>
+<body>
+<div class="disclaimer" role="alert">
+  <strong>Decision support and educational use only.</strong>
+  <span id="disclaimer-text">Predictions are not a substitute for formal diagnostic imaging or clinical judgement.</span>
+</div>
+<div id="synthetic-banner" class="synthetic" hidden>
+  Model trained on SYNTHETIC demo data. Numbers are for testing the software and mean nothing clinically.
+</div>
+
+<main class="layout">
+  <aside class="panel inputs" aria-label="Patient inputs">
+    <header>
+      <h1>Patient data</h1>
+      <p class="muted">Change any value; the heart updates automatically.</p>
+    </header>
+    <div class="row">
+      <select id="sample-select" aria-label="Load example patient"></select>
+      <button id="reset-btn" type="button" class="ghost">Reset</button>
+    </div>
+    <p id="sample-truth" class="muted small"></p>
+    <div id="form"></div>
+  </aside>
+
+  <section class="stage" aria-label="3D heart viewer">
+    <div id="viewer">
+      <div id="labels"></div>
+      <div id="loading" class="loading" role="status">Loading anatomy…</div>
+      <div id="tooltip" class="tooltip" hidden></div>
+      <div class="toolbar">
+        <button data-view="front" type="button">Front</button>
+        <button data-view="back" type="button">Back</button>
+        <button data-view="left" type="button">Left</button>
+        <button id="tg-skel" type="button" aria-pressed="true">Skeleton</button>
+        <button id="tg-beat" type="button" aria-pressed="true">Heartbeat</button>
+      </div>
+      <div class="legend" aria-label="Colour legend">
+        <span>0%</span><i></i><span>100%</span>
+        <em>predicted stenosis probability</em>
+      </div>
+      <p class="hint">Drag to rotate · scroll to zoom · click an artery or a heart region to inspect it · hover for names</p>
+    </div>
+    <div id="region-card" class="region-card" hidden></div>
+    <div class="vessels" id="vessel-cards"></div>
+  </section>
+
+  <aside class="panel results" aria-label="Results">
+    <nav class="tabs" role="tablist">
+      <button role="tab" id="tab-pred" aria-selected="true">Prediction</button>
+      <button role="tab" id="tab-perf" aria-selected="false">Performance</button>
+      <button role="tab" id="tab-imp" aria-selected="false">Importance</button>
+    </nav>
+    <div id="view-pred">
+      <div id="overall"></div>
+      <div id="warnings"></div>
+      <div id="explain"></div>
+    </div>
+    <div id="view-perf" hidden></div>
+    <div id="view-imp" hidden></div>
+  </aside>
+</main>
+
+<footer class="disclaimer foot">
+  Decision support and educational use only. Not a diagnosis. Does not replace coronary angiography, CT angiography or a clinician's judgement.
+  Anatomy: BodyParts3D (CC BY 4.0). Artery colours show one model probability per vessel, not the location of a lesion.
+</footer>
+<script type="module" src="/app.js"></script>
+</body>
+</html>

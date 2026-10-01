@@ -1,0 +1,8 @@
+{
+  "name": "cardio3d-e2e",
+  "private": true,
+  "type": "module",
+  "description": "Headless-browser test for the 3D viewer. Uses software WebGL, so it needs no GPU.",
+  "scripts": { "test": "node browser_test.mjs" },
+  "devDependencies": { "@sparticuz/chromium": "^153.0.0", "puppeteer-core": "^25.12.0" }
+}

@@ -1,0 +1,16 @@
+# Exact versions this project was developed and tested with (Python 3.12).
+# pip install -r requirements.lock   for a bit-for-bit environment.
+# trimesh and fast-simplification are only needed for scripts/optimize_glb.py.
+numpy==2.4.4
+pandas==3.0.2
+scikit-learn==1.8.0
+shap==0.52.0
+joblib==1.5.3
+openpyxl==3.1.5
+pyarrow==25.0.1
+fastapi==0.142.2
+uvicorn==0.54.0
+pydantic==2.13.5
+httpx==0.28.1
+pytest==9.1.1
+trimesh==5.1.0

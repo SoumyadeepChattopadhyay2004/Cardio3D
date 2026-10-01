@@ -1,0 +1,15 @@
+# Runtime and test dependencies. Only requirements.lock (Python 3.12) has actually been tested;
+# the lower bounds below are conservative guesses. Use the lock file for a reproducible environment.
+numpy>=1.26
+pandas>=2.1
+scikit-learn>=1.5
+shap>=0.46
+joblib>=1.3
+openpyxl>=3.1
+# Needed to unpickle the saved pipelines (pandas string columns).
+pyarrow>=14
+fastapi>=0.110
+uvicorn>=0.27
+pydantic>=2.0
+httpx>=0.26
+pytest>=8.0
